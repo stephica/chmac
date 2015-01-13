@@ -35,9 +35,7 @@ chmod u+x ~/software/chmac/{chmac.sh,chkeyval.sh,lscmdoutput.sh}
    you use =sudo=, you need to provide the full path to where you put
    =chmac.sh=, e.g.
    #+BEGIN_SRC sh
-sudo ~/software/chmac.sh
+sudo ~/software/chmac/chmac.sh
    #+END_SRC
    
-   even if =~/software= is on your =$PATH=.
-
-
+   even if =~/software/chmac= is on your =$PATH=.

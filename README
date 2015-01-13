@@ -38,6 +38,6 @@ sanely, `sudo` sanitizes the `$PATH` environment variable, so if
 you use `sudo`, you need to provide the full path to where you put
 `chmac.sh`, e.g.
 
-    sudo ~/software/chmac.sh
+    sudo ~/software/chmac/chmac.sh
 
-even if `~/software` is on your `$PATH`.
+even if `~/software/chmac` is on your `$PATH`.
