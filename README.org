@@ -1,0 +1,43 @@
+#+OPTIONS: toc:nil num:nil \n:nil @:t ::t |:t ^:{} _:{} *:t TeX:t LaTeX:t
+
+* chmac
+** Description
+  =chmac= is a command-line tool for changing the MAC address of a
+  network device.
+** Features
+   - Supports both =eth= and =wlan= devices (i.e., wired and wireless
+     network devices).
+   - Follows IEEE 802 standard for a MAC address (LSB of left-most byte
+     must be zero) so that a valid MAC is generated in one pass.
+   - Does a check on the new MAC address before releasing its
+     associated device to make sure the changed MAC address is in
+     effect.
+   - Keeps a history of previous MAC addresses in case one needs to
+     revert to a particular MAC in the future.
+   - Optionally, updates the relevant Network Manager system
+     connections file with the changed MAC address so that the change
+     is preserved in case the connection is reset. Also optionally,
+     disables auto connect to make sure, upon next connection to the
+     same access point, no connection is established before a desired
+     MAC address is set. (This feature works only if you use Network
+     Manager to manage your network connections.)
+** Download
+   First clone the repository for this project and make sure the
+   scripts are executable.
+   #+BEGIN_SRC sh
+mkdir ~/software && cd software
+git clone https://bitbucket.org/0mid/chmac.git
+chmod u+x ~/software/chmac/{chmac.sh,chkeyval.sh,lscmdoutput.sh}
+   #+END_SRC
+
+   Then, invoke =chmac.sh= as root. Remember that, if it's functioning
+   sanely, =sudo= sanitizes the =$PATH= environment variable, so if
+   you use =sudo=, you need to provide the full path to where you put
+   =chmac.sh=, e.g.
+   #+BEGIN_SRC sh
+sudo ~/software/chmac.sh
+   #+END_SRC
+   
+   even if =~/software= is on your =$PATH=.
+
+
