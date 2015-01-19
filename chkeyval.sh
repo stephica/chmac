@@ -27,26 +27,26 @@ eval set -- "$params"
 while true
 do
     case "$1" in
-        -k|--key)
-            key=$2
-            shift 2
-            ;;
-        -v|--value)
-            value=$2
-            shift 2
-            ;;
+	-k|--key)
+	    key=$2
+	    shift 2
+	    ;;
+	-v|--value)
+	    value=$2
+	    shift 2
+	    ;;
 	-s|--section)
 	    section=$2
 	    shift 2
 	    ;;
-        --)
-            shift
-            break
-            ;;
-        *)
-            echo "Unknown option: $1" >&2
-            exit 1
-            ;;
+	--)
+	    shift
+	    break
+	    ;;
+	*)
+	    echo "Unknown option: $1" >&2
+	    exit 1
+	    ;;
     esac
 done
 
@@ -67,17 +67,17 @@ if grep -q "$key" "$filename"; then # $key exists in $filename
     mv --force "$tmpfilename" "$filename"
 else
     # 1st condition: $0 ~ sec
-    # 
+    #
     # meaning: does current line ($0) contain (~) sec (which here is
     # an awk dynamic var to which the value "$section" from the shell
     # variable is assigned)?
-    # 
+    #
     # 1st action: { print; print keyval; next}
     #
     # meaning: print current line (equiv to print $0); print keyval;
     # stop processing further conditions/actions for current line and
     # move on to the next line (next)
-    # 
+    #
     # 2nd condition: empty
     #
     # meaning: always true
@@ -87,7 +87,7 @@ else
     # The second condition+action may be abbreviated to 1 (1 being the
     # always true condition resulting in the default action which is {
     # print $0} ) so that we get
-    # 
+    #
     # '$0 ~ sec { print; print keyval; next }1'
     #
     # https://www.gnu.org/software/gawk/manual/html_node/Using-Shell-Variables.html
