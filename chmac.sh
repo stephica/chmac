@@ -173,7 +173,7 @@ read -e -p "At this point, you have two options: (1) ENTER y to be presented wit
 
 inputcmd="nmcli dev wifi list"
 dispmsg="Enter # of the Wireless Access Point to connect to (r to RESCAN): "
-tmpfile=/tmp/$(mktemp lscmdoutput.XXXXXX)
+tmpfile=$(mktemp --tmpdir=/tmp lscmdoutput.XXXXXX)
 
 if [[ ! $waitreply =~ ^[Yy]$ ]]; then
     exit 0
