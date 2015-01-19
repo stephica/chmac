@@ -21,22 +21,22 @@ eval set -- "$params"
 while true
 do
     case "$1" in
-        -m|--message)
+	-m|--message)
 	    dispmsg=$2
-            shift 2
-            ;;
-        -f|--file)
+	    shift 2
+	    ;;
+	-f|--file)
 	    tmpfile=$2
-            shift 2
-            ;;
-        --)			# default to wlan0 if no arg passed in
-            shift
-            break
-            ;;
-        *)
-            echo "Unknown option: $1" >&2
-            exit 1
-            ;;
+	    shift 2
+	    ;;
+	--)			# default to wlan0 if no arg passed in
+	    shift
+	    break
+	    ;;
+	*)
+	    echo "Unknown option: $1" >&2
+	    exit 1
+	    ;;
     esac
 done
 inputcmd=$1
@@ -79,11 +79,13 @@ getactionrowNum
 # There is no straightforward and general way to return an arbitrary
 # value by a shell script, let alone return several arbitary values,
 # especially when the script writes to stdout values that are not part
-# of the return values, as is the case here. In particular, none of the hacks discussed below works in our case:
+# of the return values, as is the case here. In particular, none of
+# the hacks discussed below works in our case:
+#
 # http://tldp.org/LDP/abs/html/assortedtips.html
 # http://www.linuxjournal.com/content/return-values-bash-functions
 # https://stackoverflow.com/questions/3236871/how-to-return-a-string-value-from-a-bash-function/14541533#14541533
-# 
+#
 # The hack I'm using below is due to myself: Write the return values
 # to a tmp file whose name is passed in by the script calling us and
 # leave the task of retrieving the return values from that file to the
