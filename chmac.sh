@@ -111,25 +111,25 @@ iswlan=true
 while true
 do
     case "$1" in
-        -w|--wlan|--wireless)
-            ethorwlan=$2
+	-w|--wlan|--wireless)
+	    ethorwlan=$2
 	    rfkill block wlan	     # rfkill is necessary to down wlan later
-            shift 2
-            ;;
-        -e|--eth|--ethernet)
-            ethorwlan=$2
+	    shift 2
+	    ;;
+	-e|--eth|--ethernet)
+	    ethorwlan=$2
 	    iswlan=false
-            shift 2
-            ;;
-        --)			# default to wlan0 if no arg passed in
-            ethorwlan=wlan0
-            shift
-            break
-            ;;
-        *)
-            echo "Unknown option: $1" >&2
-            exit 1
-            ;;
+	    shift 2
+	    ;;
+	--)			# default to wlan0 if no arg passed in
+	    ethorwlan=wlan0
+	    shift
+	    break
+	    ;;
+	*)
+	    echo "Unknown option: $1" >&2
+	    exit 1
+	    ;;
     esac
 done
 
