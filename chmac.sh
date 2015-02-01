@@ -214,9 +214,6 @@ do
     do
 	break		# break after one file number is input
     done
-
-    nmcli con up id "$APname"
-    sleep 2s
 done
 
 echo -ne "Disabling auto connect in $netmansysconfile ...\r"
