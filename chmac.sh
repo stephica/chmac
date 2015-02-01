@@ -209,7 +209,7 @@ do
     #
     # https://www.gnu.org/software/bash/manual/bashref.html
     #
-    PS3="There is no file named $APname under $netmansyscondir. Either you haven't connected to this Access Point before, or NetworkManager has saved it under a different name. ENTER # of the file associated with $APname, or ENTER n if this is the first time you are connecting to $APname or if you don't know which file is associated with $APname: "
+    PS3="There is no file named $APname under $netmansyscondir. If you haven't connected to this Access Point before, connect to it first, return here and ENTER n. Or maybe NetworkManager has saved $APname under a different name, in which case ENTER # of the file you think is associated with $APname: "
     select netmansysconfile in $netmansyscondir/*
     do
 	break		# break after one file number is input
