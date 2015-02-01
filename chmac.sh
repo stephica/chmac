@@ -208,7 +208,7 @@ if [[ ! -f "$netmansysconfile" ]]; then
     #
     # https://www.gnu.org/software/bash/manual/bashref.html
     #
-    PS3="There is no file named $APname under $netmansyscondir. Either you haven't connected to this Access Point before, or NetworkManager has saved it under a different name. Enter # of the file associated with $AP: "
+    PS3="There is no file named $APname under $netmansyscondir. Either you haven't connected to this Access Point before, or NetworkManager has saved it under a different name. Enter # of the file associated with $APname: "
     select netmansysconfile in $netmansyscondir/*
     do
 	break		# break after one file number is input
