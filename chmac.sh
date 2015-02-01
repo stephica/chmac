@@ -199,7 +199,8 @@ netmansyscondir="/etc/NetworkManager/system-connections"
 netmansysconfile="$netmansyscondir/$APname"
 keyvaluepair="cloned-mac-address=$setmac"
 
-if [[ ! -f "$netmansysconfile" ]]; then
+while [[ ! -f "$netmansysconfile" ]]
+do
     # https://unix.stackexchange.com/questions/44471/display-a-menu-of-files-names-and-let-the-user-select-a-file-by-entering-a-numbe
     #
     # The value of PS3 is used as the prompt for the select
@@ -213,7 +214,10 @@ if [[ ! -f "$netmansysconfile" ]]; then
     do
 	break		# break after one file number is input
     done
-fi
+
+    nmcli con up id "$APname"
+    sleep 2s
+done
 
 echo -ne "Disabling auto connect in $netmansysconfile ...\r"
 disableautoconnect && \
