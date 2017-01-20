@@ -90,7 +90,7 @@ getactionrowNum
 # to a tmp file whose name is passed in by the script calling us and
 # leave the task of retrieving the return values from that file to the
 # caller. Another solution would be to use a named pipe (fifo) instead
-# of a tmp file, since the data to be comuunicated is less than 64kB
+# of a tmp file, since the data to be communicated is less than 64kB
 # (what a named pipe can handle). That would have the advantage that
 # only an inode is created for the file (rather than the whole file);
 # no data would be written to disk. (N.B. reading and writing to a
