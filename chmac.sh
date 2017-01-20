@@ -216,6 +216,8 @@ do
     done
 done
 
+APname=$(basename "$netmansysconfile")
+
 echo -ne "Disabling auto connect in $netmansysconfile ...\r"
 disableautoconnect && \
     echo -ne "Disabling auto connect in $netmansysconfile [ DONE ]\r\n"
