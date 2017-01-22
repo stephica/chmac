@@ -1,6 +1,7 @@
-#+OPTIONS: toc:nil num:nil \n:nil @:t ::t |:t ^:{} _:{} *:t TeX:t LaTeX:t
-
 * chmac
+  :PROPERTIES:
+  :CUSTOM_ID: chmac_bash
+  :END:
 ** Description
   =chmac= is a command-line tool for changing the MAC address of a
   network device.
