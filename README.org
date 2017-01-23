@@ -23,14 +23,17 @@
      MAC address is set. (This feature works only if you use Network
      Manager to manage your network connections.)
 ** Download
-   First clone the repository for this project and make sure the
-   scripts are executable.
+   https://github.com/0mid/chmac
+** Setup
+   Clone the repository for this project and make sure the scripts are
+   executable.
    #+BEGIN_SRC sh
      mkdir ~/bin && cd bin
      git clone https://github.com/0mid/chmac.git
      chmod u+x ~/bin/chmac/{chmac.sh,chkeyval.sh,lscmdoutput.sh}
    #+END_SRC
-   Then, invoke =chmac.sh= as root. Remember that, if it's functioning
+** Usage
+   Invoke =chmac.sh= as root. Remember that, if it's functioning
    sanely, =sudo= sanitizes the =$PATH= environment variable, so if
    you use =sudo=, you need to provide the full path to where you put
    =chmac.sh=, e.g.
